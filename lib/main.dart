@@ -14,7 +14,7 @@ void main() {
       title: 'Jogos',
       home: TelaPrincipal(),
     
-    initialRoute: 't2',
+    initialRoute: 't1',
     routes: {
       //'t0': (context) => TelaLogin(),
       't1': (context) => TelaPrincipal(),
