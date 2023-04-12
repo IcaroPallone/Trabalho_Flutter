@@ -33,6 +33,10 @@ class _AdicionarJogoState extends State<AdicionarJogo> {
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 95, 95, 95),
         title: Text('Adicionar Jogo'),
+        /*leading: IconButton(icon: Icon(Icons.arrow_back),
+        onPressed: (){
+          Navigator.pop(context);
+        },*/
         ),
       body: SingleChildScrollView(
         child: Container(
@@ -115,7 +119,7 @@ class _AdicionarJogoState extends State<AdicionarJogo> {
                 if (txtNome.isNotEmpty && txtFoto.isNotEmpty && txtCategoria.isNotEmpty && txtPlataforma.isNotEmpty && txtSobre.isNotEmpty) {
                     setState(() {
                       tabela.add(Games(nome: txtNome, foto: txtFoto, categoria: txtCategoria, plataforma: txtPlataforma, sobre: txtSobre,));
-                    });
+});
                     mensagem(
                       'Jogo adicionado com sucesso.',
                       Colors.blueAccent.shade100,
@@ -133,7 +137,6 @@ class _AdicionarJogoState extends State<AdicionarJogo> {
           ],
         ),
       ),
-
 
       ),
     );

@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/repositories/games_repository.dart';
 import 'package:projeto/view/games_detalhes.dart';
-
 import '../model/games.dart';
 
 class TelaPrincipal extends StatefulWidget {
@@ -12,7 +11,6 @@ class TelaPrincipal extends StatefulWidget {
   @override
   State<TelaPrincipal> createState() => _TelaPrincipalState();
 }
-
 
 class _TelaPrincipalState extends State<TelaPrincipal> {
   @override
@@ -26,6 +24,93 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      drawer: Drawer(
+        backgroundColor: Color.fromARGB(255, 95, 95, 95),
+        child: 
+          Column(
+            children: [
+              ListTile(
+                title: Text('Categorias',
+                style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                ),),
+              ),
+              Divider(color: Colors.white,),
+
+              ListTile(
+                title: Text('Ação',
+                style: TextStyle(
+                color: Colors.white,
+                ),),
+                onTap: (){
+                  Navigator.pushNamed(context, 't5').then((_) => setState(() {}));
+                },
+              ),
+              ListTile(
+                title: Text('Corrida',
+                style: TextStyle(
+                color: Colors.white,
+                ),),
+                onTap: (){
+                  Navigator.pushNamed(context, 't6').then((_) => setState(() {}));
+                },
+              ),
+              ListTile(
+                title: Text('Estratégia',
+                style: TextStyle(
+                color: Colors.white,
+                ),),
+                onTap: (){
+                  Navigator.pushNamed(context, 't7').then((_) => setState(() {}));
+                },
+              ),
+              ListTile(
+                title: Text('RPG',
+                style: TextStyle(
+                color: Colors.white,
+                ),),
+                onTap: (){
+                  Navigator.pushNamed(context, 't3').then((_) => setState(() {}));
+                },
+              ),
+              Divider(color: Colors.white,),
+              ListTile(
+                title: Text('Adicionar Jogo',
+                style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                ),),
+                onTap: (){
+                  Navigator.pushNamed(context, 't2').then((_) => setState(() {}));
+                },
+              ),
+              Divider(color: Colors.white,),
+              ListTile(
+                title: Text('Comentar Jogo',
+                style: TextStyle(
+                 fontWeight: FontWeight.bold,
+                color: Colors.white,
+                ),),
+                onTap: (){
+                  Navigator.pushNamed(context, 't4').then((_) => setState(() {}));
+                },
+              ),
+              Divider(color: Colors.white,),
+              ListTile(
+                title: Text('Sobre',
+                style: TextStyle(
+                 fontWeight: FontWeight.bold,
+                color: Colors.white,
+                ),),
+                onTap: (){
+                  Navigator.pushNamed(context, 't4').then((_) => setState(() {}));
+                },
+              ),
+              Divider(color: Colors.white,),
+          ] 
+        ),
+      ),
       appBar: AppBar(
         title: Text('Jogos'),
         centerTitle: true,
@@ -61,8 +146,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         ),
  
     );   
-   
-    
+      
   }
 }
 

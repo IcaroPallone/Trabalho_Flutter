@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:projeto/repositories/games_repository.dart';
-
 import '../model/games.dart';
 import 'comentarios_jogo.dart';
+
 class GamesDetalhes extends StatefulWidget {
   Games games;
   GamesDetalhes({Key? key, required this.games}) : super(key: key);
