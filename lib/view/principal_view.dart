@@ -71,7 +71,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 color: Colors.white,
                 ),),
                 onTap: (){
-                  Navigator.pushNamed(context, 't3').then((_) => setState(() {}));
+                  Navigator.pushNamed(context, 't4').then((_) => setState(() {}));
                 },
               ),
               Divider(color: Colors.white,),
@@ -93,7 +93,18 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 color: Colors.white,
                 ),),
                 onTap: (){
-                  Navigator.pushNamed(context, 't4').then((_) => setState(() {}));
+                  Navigator.pushNamed(context, 't3').then((_) => setState(() {}));
+                },
+              ),
+              Divider(color: Colors.white,),
+              ListTile(
+                title: Text('Favoritos',
+                style: TextStyle(
+                 fontWeight: FontWeight.bold,
+                color: Colors.white,
+                ),),
+                onTap: (){
+                  Navigator.pushNamed(context, 't8').then((_) => setState(() {}));
                 },
               ),
               Divider(color: Colors.white,),
@@ -104,7 +115,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 color: Colors.white,
                 ),),
                 onTap: (){
-                  Navigator.pushNamed(context, 't4').then((_) => setState(() {}));
+                  Navigator.pushNamed(context, 't3').then((_) => setState(() {}));
                 },
               ),
               Divider(color: Colors.white,),

@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, prefer_const_constructors, prefer_interpolation_to_compose_strings, deprecated_member_use
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, prefer_const_constructors, prefer_interpolation_to_compose_strings, deprecated_member_use, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 import 'package:projeto/repositories/games_repository.dart';
@@ -16,6 +16,7 @@ class GamesDetalhes extends StatefulWidget {
 class _GamesDetalhesState extends State<GamesDetalhes> {
   @override
   Widget build(BuildContext context) {
+    final favoritos = Favorito.favoritos;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
       appBar: AppBar(
@@ -35,7 +36,32 @@ class _GamesDetalhesState extends State<GamesDetalhes> {
           ),
         ],
       ),
-
+       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.favorite),
+        backgroundColor: Color.fromARGB(255, 25, 25, 25),
+        onPressed: () {
+          int flag=0;
+          for (var i = 0; i < favoritos.length; i++) {
+            if(favoritos[i].nome == widget.games.nome){
+              flag++;
+           }
+          }
+          if(flag==0){
+            favoritos.add(Games(nome: widget.games.nome, foto: widget.games.foto, categoria: widget.games.categoria, plataforma: widget.games.plataforma, sobre: widget.games.sobre,));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              duration: Duration(seconds: 3),
+              content: Text('Adicionado aos favoritos.'),
+            ));
+            Navigator.pop(context);
+          }
+          else{
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              duration: Duration(seconds: 3),
+              content: Text('Jogo já está salvo nos favoritos.'),
+            ));
+          }
+        },
+      ),
     );    
   }
 
@@ -94,8 +120,8 @@ class _GamesDetalhesState extends State<GamesDetalhes> {
                 mostrarDetalhes2(widget.games);
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.white, // Background color
-                onPrimary: Colors.black, // Text Color (Foreground color)
+                primary: Colors.white,
+                onPrimary: Colors.black, 
               ),
               child: 
               Text('Visualizar Comentários',),

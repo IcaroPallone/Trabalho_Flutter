@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import '../model/comentarios.dart';
@@ -64,6 +64,9 @@ class _ComentarJogoState extends State<ComentarJogo> {
               height: 20,
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Color.fromARGB(255, 95, 95, 95),
+              ),
               onPressed: () {
                 //EVENTO DE PRESSIONAMENTO DO BOTÃO
                 if (txtNome.isNotEmpty && txtComentario.isNotEmpty) {
