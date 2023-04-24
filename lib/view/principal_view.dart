@@ -27,8 +27,18 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       drawer: Drawer(
         backgroundColor: Color.fromARGB(255, 95, 95, 95),
         child: 
-          Column(
+          ListView(
             children: [
+              UserAccountsDrawerHeader(
+                accountName: Text("Flutter"),
+                accountEmail: Text("flutter@appmaking.co"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage("lib/images/icon.png"),
+                ),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 50, 50, 50),
+                ),
+              ),
               ListTile(
                 title: Text('Categorias',
                 style: TextStyle(
