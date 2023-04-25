@@ -16,6 +16,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
   @override
   Widget build(BuildContext context) {
     final tabela = GamesRepository.tabela;
+    final tabelausuario = Usuarios.tabelausuario;
 
     mostrarDetalhes(Games games) {
       Navigator.push(context, MaterialPageRoute(
@@ -30,8 +31,8 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
           ListView(
             children: [
               UserAccountsDrawerHeader(
-                accountName: Text("Flutter"),
-                accountEmail: Text("flutter@appmaking.co"),
+                accountName: Text(tabelausuario[0].nomeusuario),
+                accountEmail: Text(tabelausuario[0].email),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: AssetImage("lib/images/icon.png"),
                 ),
@@ -125,7 +126,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 color: Colors.white,
                 ),),
                 onTap: (){
-                  Navigator.pushNamed(context, 't3').then((_) => setState(() {}));
+                  Navigator.pushNamed(context, 't9').then((_) => setState(() {}));
                 },
               ),
               Divider(color: Colors.white,),

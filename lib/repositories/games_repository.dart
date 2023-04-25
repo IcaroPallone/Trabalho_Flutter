@@ -1,5 +1,6 @@
 import '../model/comentarios.dart';
 import '../model/games.dart';
+import '../model/usuario.dart';
 
 class GamesRepository{
   static List<Games> tabela = [
@@ -108,4 +109,8 @@ class ComentariosRepository{
 
 class Favorito{
   static List<Games> favoritos = [];
+}
+
+class Usuarios{
+  static List<Usuario> tabelausuario = [];
 }
